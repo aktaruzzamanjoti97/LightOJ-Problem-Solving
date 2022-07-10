@@ -12,24 +12,24 @@ int main()
         cin >> n;
         ll sqr = ceil(sqrt(n));
         ll diff = sqr * sqr - n;
-        ll x, y;
+        ll col, row;
 
         if (diff < sqr)
         {
-            y = diff + 1;
-            x = sqr;
+            row = diff + 1;
+            col = sqr;
         }
         else
         {
-            x = 2 * sqr - diff - 1;
-            y = sqr;
+            col = n - (sqr - 1) * (sqr - 1);
+            row = sqr;
         }
-        if (sqr & 1)
+        if (sqr % 2 == 0)
         {
-            swap(x, y);
+            swap(row, col);
         }
 
-        cout << "Case " << ++count << ": " << x << " " << y << endl;
+        cout << "Case " << ++count << ": " << row << " " << col << endl;
     }
 
     return 0;
